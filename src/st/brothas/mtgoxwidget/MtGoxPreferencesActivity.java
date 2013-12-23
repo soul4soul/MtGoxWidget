@@ -99,7 +99,6 @@ public class MtGoxPreferencesActivity extends PreferenceActivity {
     private void updateWidgetWithWaitMessage(int appWidgetId) {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
         MtGoxWidgetProvider.updateAppWidgetWithWaitMessage(this, appWidgetManager, appWidgetId);
-
     }
 
     private void startWidget(int appWidgetId) {

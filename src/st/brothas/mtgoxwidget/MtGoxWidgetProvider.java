@@ -48,7 +48,7 @@ import java.util.Date;
 public class MtGoxWidgetProvider extends AppWidgetProvider {
     public static final String LOG_TAG = "MtGox";
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("E HH:mm");
-    private static final int DATA_IS_CONSIDERED_OLD_AFTER_MINUTES = 60;
+    private static final int DATA_IS_CONSIDERED_OLD_AFTER_MINUTES = 30;
 
     private enum WidgetColor {Warning, StartValue, Increase, Decrease, Normal}
 
@@ -127,6 +127,13 @@ public class MtGoxWidgetProvider extends AppWidgetProvider {
         views.setTextViewText(R.id.appwidget_high, highRounded);
         views.setTextViewText(R.id.appwidget_low, lowRounded);
         views.setTextViewText(R.id.appwidget_updated, updated);
+
+        //aws
+        if (preferences.getCurrencyConversion().toString().contains("LTC_"))
+        {
+            views.setImageViewResource(R.id.appwidget_logo, R.drawable.lc_logo_32);
+        }
+        //else default which is bitcoin logo
     }
 
     private static void updateViewsWithError(RemoteViews views, WidgetPreferences preferences) {

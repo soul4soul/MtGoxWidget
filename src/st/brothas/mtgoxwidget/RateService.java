@@ -19,7 +19,7 @@ public enum RateService {
             new TickerUrl(BTC_RUB, "https://data.mtgox.com/api/2/BTCRUB/money/ticker"),
             new TickerUrl(BTC_SEK, "https://data.mtgox.com/api/2/BTCSEK/money/ticker")),
 
-            // TradeHill shut down trading February 13, 2012.
+    // TradeHill shut down trading February 13, 2012.
     TRADEHILL(2,"TradeHill"),
 
     CAMPBX(3, "Camp BX", new TickerUrl(BTC_USD, "http://campbx.com/api/xticker.php")),
@@ -31,7 +31,10 @@ public enum RateService {
     BITFLOOR(5,"Bitfloor", new TickerUrl(BTC_USD, "https://api.bitfloor.com/ticker/1")),
     BITSTAMP(6,"Bitstamp", new TickerUrl(BTC_USD, "https://www.bitstamp.net/api/ticker/")),
     CRYPTOXCHANGE (7, "Crypto X Change", new TickerUrl(BTC_USD, "http://cryptoxchange.com/api/v0/data/BTCUSD/ticker")),
-    BTCE (8, "BTC-e", new TickerUrl(BTC_USD, "https://btc-e.com/api/2/btc_usd/ticker"));
+
+    BTCE (8, "BTC-e",
+            new TickerUrl(BTC_USD, "https://btc-e.com/api/2/btc_usd/ticker"),
+            new TickerUrl(LTC_USD, "https://btc-e.com/api/2/ltc_usd/ticker"));
 
     private final int id;
     private final String name;
